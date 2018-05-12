@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="sass css," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="变量sass中可以定义变量，方便统一修改和维护。123456789101112131415161718//sass style//-----------------------------------$fontStack:    Helvetica, sans-serif;$primaryColor: #333;body &amp;#123;  font-family: $fontStack;  colo">
+<meta name="keywords" content="sass css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass语法">
+<meta property="og:url" content="http://yoursite.com/2018/05/13/sass语法/index.html">
+<meta property="og:site_name" content="Remain focused">
+<meta property="og:description" content="变量sass中可以定义变量，方便统一修改和维护。123456789101112131415161718//sass style//-----------------------------------$fontStack:    Helvetica, sans-serif;$primaryColor: #333;body &amp;#123;  font-family: $fontStack;  colo">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-12T16:02:47.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sass语法">
+<meta name="twitter:description" content="变量sass中可以定义变量，方便统一修改和维护。123456789101112131415161718//sass style//-----------------------------------$fontStack:    Helvetica, sans-serif;$primaryColor: #333;body &amp;#123;  font-family: $fontStack;  colo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/13/sass语法/"/>
+
+
+
+
+
+  <title>sass语法 | Remain focused</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/CutiePanther"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Remain focused</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/sass语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Grapelet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Remain focused">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sass语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T00:02:19+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>sass中可以定义变量，方便统一修改和维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line"></span><br><span class="line">$fontStack:    Helvetica, sans-serif;</span><br><span class="line">$primaryColor: #333;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">  font-family: $fontStack;</span><br><span class="line">  color: $primaryColor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">  font-family: Helvetica, sans-serif;</span><br><span class="line">  color: #333;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><p>sass可以进行选择器的嵌套，表示层级关系，看起来很优雅整齐。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">nav &#123;</span><br><span class="line">  ul &#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">    list-style: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  li &#123; display: inline-block; &#125;</span><br><span class="line"></span><br><span class="line">  a &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    padding: 6px 12px;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line">nav ul &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nav li &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nav a &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  padding: 6px 12px;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h4><p>sass中如导入其他sass文件，最后编译为一个css文件，优于纯css的@import</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">// _reset.scss</span><br><span class="line"></span><br><span class="line">html,</span><br><span class="line">body,</span><br><span class="line">ul,</span><br><span class="line">ol &#123;</span><br><span class="line">   margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">// base.scss </span><br><span class="line"></span><br><span class="line">@import &apos;reset&apos;;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">  font-size: 100% Helvetica, sans-serif;</span><br><span class="line">  background-color: #efefef;</span><br><span class="line">&#125;</span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line">html, body, ul, ol &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">  background-color: #efefef;</span><br><span class="line">  font-size: 100% Helvetica, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h4><p>sass中可用mixin定义一些代码片段，且可传参数，方便日后根据需求调用。从此处理css3的前缀兼容轻松便捷。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">@mixin box-sizing ($sizing) &#123;</span><br><span class="line">    -webkit-box-sizing:$sizing;     </span><br><span class="line">       -moz-box-sizing:$sizing;</span><br><span class="line">            box-sizing:$sizing;</span><br><span class="line">&#125;</span><br><span class="line">.box-border&#123;</span><br><span class="line">    border:1px solid #ccc;</span><br><span class="line">    @include box-sizing(border-box);</span><br><span class="line">&#125;</span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line">.box-border &#123;</span><br><span class="line">  border: 1px solid #ccc;</span><br><span class="line">  -webkit-box-sizing: border-box;</span><br><span class="line">  -moz-box-sizing: border-box;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="扩展-继承"><a href="#扩展-继承" class="headerlink" title="扩展/继承"></a>扩展/继承</h4><p>sass可通过@extend来实现代码组合声明，使代码更加优越简洁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">.message &#123;</span><br><span class="line">  border: 1px solid #ccc;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  color: #333;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.success &#123;</span><br><span class="line">  @extend .message;</span><br><span class="line">  border-color: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.error &#123;</span><br><span class="line">  @extend .message;</span><br><span class="line">  border-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.warning &#123;</span><br><span class="line">  @extend .message;</span><br><span class="line">  border-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line">.message, .success, .error, .warning &#123;</span><br><span class="line">  border: 1px solid #cccccc;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  color: #333;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.success &#123;</span><br><span class="line">  border-color: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.error &#123;</span><br><span class="line">  border-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.warning &#123;</span><br><span class="line">  border-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>sass可进行简单的加减乘除运算等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">.container &#123; width: 100%; &#125;</span><br><span class="line"></span><br><span class="line">article[role=&quot;main&quot;] &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 600px / 960px * 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">aside[role=&quot;complimentary&quot;] &#123;</span><br><span class="line">  float: right;</span><br><span class="line">  width: 300px / 960px * 100%;</span><br><span class="line">&#125;</span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line">.container &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">article[role=&quot;main&quot;] &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 62.5%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">aside[role=&quot;complimentary&quot;] &#123;</span><br><span class="line">  float: right;</span><br><span class="line">  width: 31.25%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><p>sass中集成了大量的颜色函数，让变换颜色更加简单。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//sass style</span><br><span class="line">//-----------------------------------</span><br><span class="line">$linkColor: #08c;</span><br><span class="line">a &#123;</span><br><span class="line">    text-decoration:none;</span><br><span class="line">    color:$linkColor;</span><br><span class="line">    &amp;:hover&#123;</span><br><span class="line">      color:darken($linkColor,10%);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//css style</span><br><span class="line">//-----------------------------------</span><br><span class="line">a &#123;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  color: #0088cc;</span><br><span class="line">&#125;</span><br><span class="line">a:hover &#123;</span><br><span class="line">  color: #006699;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sass-css/" rel="tag"># sass css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/13/第一个python程序/" rel="next" title="第一个python程序">
+                <i class="fa fa-chevron-left"></i> 第一个python程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/13/git添加ssh密钥/" rel="prev" title="git添加ssh密钥">
+                git添加ssh密钥 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Grapelet" />
+            
+              <p class="site-author-name" itemprop="name">Grapelet</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套"><span class="nav-number">2.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入"><span class="nav-number">3.</span> <span class="nav-text">导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mixin"><span class="nav-number">4.</span> <span class="nav-text">mixin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展-继承"><span class="nav-number">5.</span> <span class="nav-text">扩展/继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算"><span class="nav-number">6.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">7.</span> <span class="nav-text">颜色</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Grapelet</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">由 Hexo 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; grapelet v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>
