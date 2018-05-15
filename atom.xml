@@ -86,6 +86,26 @@
   </entry>
   
   <entry>
+    <title>git添加ssh密钥</title>
+    <link href="http://yoursite.com/2018/05/13/git%E6%B7%BB%E5%8A%A0ssh%E5%AF%86%E9%92%A5/"/>
+    <id>http://yoursite.com/2018/05/13/git添加ssh密钥/</id>
+    <published>2018-05-12T16:03:27.000Z</published>
+    <updated>2018-05-15T11:38:14.293Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="为你的git仓库添加ssh密钥"><a href="#为你的git仓库添加ssh密钥" class="headerlink" title="为你的git仓库添加ssh密钥"></a>为你的git仓库添加ssh密钥</h2><a id="more"></a><p>1、设置Git的user name和email：(如果是第一次的话)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    $ git config --global user.name &quot;humingx&quot;</span><br><span class="line">$ git config --global user.email &quot;humingx@yeah.net&quot;</span><br></pre></td></tr></table></figure><p>2、生成密钥</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;humingx@yeah.net&quot;</span><br></pre></td></tr></table></figure><p>连续3个回车。如果不需要密码的话。<br>最后得到了两个文件：id_rsa和id_rsa.pub。</p><p>如果不是第一次，就选择overwrite.</p><p>3、添加密钥到ssh-agent<br>确保 ssh-agent 是可用的。ssh-agent是一种控制用来保存公钥身份验证所使用的私钥的程序，其实ssh-agent就是一个密钥管理器，运行ssh-agent以后，使用ssh-add将私钥交给ssh-agent保管，其他程序需要身份验证的时候可以将验证申请交给ssh-agent来完成整个认证过程。</p><pre><code># start the ssh-agent in the backgroundeval &quot;$(ssh-agent -s)&quot;Agent pid 59566</code></pre><p>添加生成的 SSH key 到 ssh-agent。</p><pre><code>$ ssh-add ~/.ssh/id_rsa</code></pre><p>4、登陆Github, 添加 ssh 。<br>把id_rsa.pub文件里的内容复制到这里</p><p>5、测试：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>你将会看到：</p><pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.Are you sure you want to continue connecting (yes/no)?</code></pre><p>选择 yes</p><pre><code>Hi humingx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</code></pre><p>如果看到Hi后面是你的用户名，就说明成功了。</p><p>6、修改.git文件夹下config中的url。<br>修改前</p><pre><code>[remote &quot;origin&quot;]url = https://github.com/humingx/humingx.github.io.gitfetch = +refs/heads/*:refs/remotes/origin/*</code></pre><p>修改后</p><pre><code>[remote &quot;origin&quot;]url = git@github.com:humingx/humingx.github.io.gitfetch = +refs/heads/*:refs/remotes/origin/*</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;为你的git仓库添加ssh密钥&quot;&gt;&lt;a href=&quot;#为你的git仓库添加ssh密钥&quot; class=&quot;headerlink&quot; title=&quot;为你的git仓库添加ssh密钥&quot;&gt;&lt;/a&gt;为你的git仓库添加ssh密钥&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sass语法</title>
     <link href="http://yoursite.com/2018/05/13/sass%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2018/05/13/sass语法/</id>
