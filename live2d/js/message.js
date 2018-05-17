@@ -94,6 +94,8 @@ $.ajax({
 });
 (function (){
     var text;
+    console.info('home',`${home_Path}`)
+
     if(document.referrer !== ''){
         var referrer = document.createElement('a');
         referrer.href = document.referrer;
