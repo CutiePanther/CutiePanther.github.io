@@ -22,7 +22,7 @@ String.prototype.renderTip = function (context) {
 
 var re = /x/;
 console.log(re);
-loadRandModel()
+loadRandModel();
 re.toString = function() {
     showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
     return '';
