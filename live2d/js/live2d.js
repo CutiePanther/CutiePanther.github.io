@@ -171,8 +171,6 @@
         var u = this.modelMatrix.invertTransformX(i),
             p = this.modelMatrix.invertTransformY(e);
         return n <= u && u <= s && _ <= p && p <= a
-    }, r.prototype.hitTestSimpleCustom = function (t, i, e, r) {
-        return null !== this.live2DModel && (e >= t[0] && e <= i[0] && r <= t[1] && r >= i[1])
     }, o.prototype = new AMotion, o.EXPRESSION_DEFAULT = "DEFAULT", o.TYPE_SET = 0, o.TYPE_ADD = 1, o.TYPE_MULT = 2, o.loadJson = function (t) {
         var i = new o,
             e = c.getPlatformManager(),
