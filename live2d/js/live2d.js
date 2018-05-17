@@ -4251,8 +4251,6 @@
                 return this.hitTestSimple(n, i, e)
             }
         return !1
-    }, o.prototype.hitTestCustom = function (t, i, e) {
-        return "head" == t ? this.hitTestSimpleCustom(h.default.hit_areas_custom_head_x, h.default.hit_areas_custom_head_y, i, e) : "body" == t && this.hitTestSimpleCustom(h.default.hit_areas_custom_body_x, h.default.hit_areas_custom_body_y, i, e)
     }
 }, function (t, i, e) {
     "use strict";
