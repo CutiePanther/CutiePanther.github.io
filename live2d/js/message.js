@@ -112,26 +112,26 @@ $.ajax({
         if (window.location.href == `${home_Path}`) { //如果是主页
             var now = (new Date()).getHours();
             if (now > 23 || now <= 5) {
-                text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？';
-            } else if (now > 5 && now <= 7) {
-                text = '早上好！一日之计在于晨，美好的一天就要开始了！';
-            } else if (now > 7 && now <= 11) {
-                text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
-            } else if (now > 11 && now <= 14) {
-                text = '中午了，工作了一个上午，现在是午餐时间！';
-            } else if (now > 14 && now <= 17) {
+                text = '哼！这么晚还不睡觉，你是想挨打咯！';
+            } else if (now > 7 && now <= 9) {
+                text = '早上好！难得有像你这么勤劳的小伙伴！';
+            } else if (now > 10 && now <= 11) {
+                text = '嗨！不要埋头工作，多起来走动走动哦！';
+            } else if (now > 11 && now <= 13) {
+                text = '不知不觉忙碌了一个上午，肚子都咕咕叫啦！';
+            } else if (now > 13 && now <= 15) {
                 text = '午后很容易犯困呢，今天的运动目标完成了吗？';
             } else if (now > 17 && now <= 19) {
-                text = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~~';
+                text = '傍晚了！出门散个步吧，今天的夕阳很美呢！';
             } else if (now > 19 && now <= 21) {
-                text = '晚上好，今天过得怎么样？';
+                text = '晚上好，你没事做呀，想听我唱歌吗？';
             } else if (now > 21 && now <= 23) {
-                text = '已经这么晚了呀，早点休息吧，晚安~~';
+                text = '诶哟，已经这么晚了呀，早点休息吧！';
             } else {
-                text = '嗨~ 快来逗我玩吧！';
+                text = '加油~ 好好看书，我会陪你哒！';
             }
         }else {
-            text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+            text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' | ')[0] + ' 」</span>';
         }
     }
     showMessage(text, 12000);
