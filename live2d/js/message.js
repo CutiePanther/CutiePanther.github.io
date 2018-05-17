@@ -22,6 +22,7 @@ String.prototype.renderTip = function (context) {
 
 var re = /x/;
 console.log(re);
+loadRandModel()
 re.toString = function() {
     showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
     return '';
@@ -38,7 +39,7 @@ $('#hitokoto').mouseover(function (){
 });
 
 $('.model-tool .fui-home').click(function (){
-    window.location = 'https://strawburry.top/';
+    window.location = 'https://cutiepanther.github.io/';
 });
 
 $('.model-tool .fui-eye').click(function (){
@@ -91,7 +92,6 @@ $.ajax({
         });
     }
 });
-loadRandModel();
 (function (){
     var text;
     if(document.referrer !== ''){
