@@ -171,6 +171,8 @@
         var u = this.modelMatrix.invertTransformX(i),
             p = this.modelMatrix.invertTransformY(e);
         return n <= u && u <= s && _ <= p && p <= a
+    }, r.prototype.hitTestSimpleCustom = function (t, i, e, r) {
+        return null !== this.live2DModel && (e >= t[0] && e <= i[0] && r <= t[1] && r >= i[1])
     }, o.prototype = new AMotion, o.EXPRESSION_DEFAULT = "DEFAULT", o.TYPE_SET = 0, o.TYPE_ADD = 1, o.TYPE_MULT = 2, o.loadJson = function (t) {
         var i = new o,
             e = c.getPlatformManager(),
@@ -4251,6 +4253,8 @@
                 return this.hitTestSimple(n, i, e)
             }
         return !1
+    }, o.prototype.hitTestCustom = function (t, i, e) {
+        return "head" == t ? this.hitTestSimpleCustom(h.default.hit_areas_custom_head_x, h.default.hit_areas_custom_head_y, i, e) : "body" == t && this.hitTestSimpleCustom(h.default.hit_areas_custom_body_x, h.default.hit_areas_custom_body_y, i, e)
     }
 }, function (t, i, e) {
     "use strict";
