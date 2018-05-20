@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Remain focused">
 <meta property="og:description" content="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-15T14:06:22.789Z">
+<meta property="og:updated_time" content="2018-05-20T06:36:34.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git添加ssh密钥">
 <meta name="twitter:description" content="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥">
@@ -343,9 +343,9 @@
       
         <h6 id="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥"><a href="#秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥" class="headerlink" title="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥"></a>秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥</h6><a id="more"></a>
 <p>1、设置Git的user name和email：(如果是第一次的话)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    $ git config --global user.name &quot;humingx&quot;</span><br><span class="line">$ git config --global user.email &quot;humingx@yeah.net&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    $ git config --global user.name &quot;yourname&quot;</span><br><span class="line">$ git config --global user.email &quot;youname@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 <p>2、生成密钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;humingx@yeah.net&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;yourname@gmail.come&quot;</span><br></pre></td></tr></table></figure>
 <p>连续3个回车。如果不需要密码的话。<br>最后得到了两个文件：id_rsa和id_rsa.pub。</p>
 <p>如果不是第一次，就选择overwrite.</p>
 <p>3、添加密钥到ssh-agent<br>确保 ssh-agent 是可用的。ssh-agent是一种控制用来保存公钥身份验证所使用的私钥的程序，其实ssh-agent就是一个密钥管理器，运行ssh-agent以后，使用ssh-add将私钥交给ssh-agent保管，其他程序需要身份验证的时候可以将验证申请交给ssh-agent来完成整个认证过程。</p>
@@ -362,15 +362,15 @@ Agent pid 59566
 RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
 Are you sure you want to continue connecting (yes/no)?
 </code></pre><p>选择 yes</p>
-<pre><code>Hi humingx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+<pre><code>Hi yourname! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
 </code></pre><p>如果看到Hi后面是你的用户名，就说明成功了。</p>
 <p>6、修改.git文件夹下config中的url。<br>修改前</p>
 <pre><code>[remote &quot;origin&quot;]
-url = https://github.com/humingx/humingx.github.io.git
+url = https://github.com/humingx/yourname.github.io.git
 fetch = +refs/heads/*:refs/remotes/origin/*
 </code></pre><p>修改后</p>
 <pre><code>[remote &quot;origin&quot;]
-url = git@github.com:humingx/humingx.github.io.git
+url = git@github.com:humingx/yourname.github.io.git
 fetch = +refs/heads/*:refs/remotes/origin/*
 </code></pre>
       
@@ -495,7 +495,7 @@ fetch = +refs/heads/*:refs/remotes/origin/*
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +621,7 @@ fetch = +refs/heads/*:refs/remotes/origin/*
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">15.7k</span> 字
+      博客全站共： <span class="post-count">16.3k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
