@@ -445,11 +445,11 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .main {
@@ -457,11 +457,11 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .footer {
@@ -474,11 +474,11 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 pre,
@@ -2089,7 +2089,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e8491a;
+  background: #8ee463;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3171,15 +3171,51 @@ hr {
     text-align: center;
   }
 }
+.main-inner {
+  background: rgba(255,255,255,0.53);
+  margin-top: 20px;
+}
+.posts-expand {
+  padding-top: 20px;
+}
+.sign {
+  font-size: 24px;
+  font-family: '仿宋';
+  color: #404040;
+  padding: 20px;
+  text-align: center;
+}
 .post {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin: auto 15px;
   padding: 25px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.53);
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
-body {
-  background-color: #fefcfa;
-  transition: background-color 0.8s ease-in-out;
-  background: '/images/bg.jpg' no-repeat;
+body::before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  z-index: -1;
+  background-image: url("/images/bg1.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  -moz-filter: blur(2px) brightness(0.98);
+  -webkit-filter: blur(2px) brightness(0.98);
+  -o-filter: blur(2px) brightness(0.98);
+  -ms-filter: blur(2px) brightness(0.98);
+  filter: blur(2px) brightness(0.98);
+}
+.header-inner {
+  padding: 25px 0 0;
+}
+.footer {
+  background: rgba(137,137,255,0.3);
+  color: #f3f3f3;
 }
