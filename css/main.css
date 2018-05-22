@@ -2089,7 +2089,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff2ff9;
+  background: #b5a8e9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3173,10 +3173,13 @@ hr {
 }
 .main-inner {
   background: rgba(255,255,255,0.53);
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .posts-expand {
   padding-top: 20px;
+}
+.content {
+  padding-bottom: 20px;
 }
 .sign {
   font-size: 24px;
