@@ -341,11 +341,8 @@
 
       
         
-          
-          
-最近在写微信小程序的接口调用并绑定处理数据，发现微信小程序的原生的request，请求和业务代码写在一起，且不支持并发请求(最多5个)。想写一个api工厂，统一管理请求函数，业务代码只关系返回数据的处理。修改一个url也不用到处去找调用的地方，代码优雅且方便维护。说做就做：小程序支持ES6的语法,可以使用promise(anything).then((res)=&gt;{anything}).catch()的方法解决小程序函数并发的问题.想来可以使用promise封装一下wx.request，以达到axios的使用效果
-Promise 的含义Promise 是异步编程的一种解决方案，比传统的
-          ...
+          <p><img src="http://img.wang1314.net/uploadfile/2017/2017-04-28/1493351760429u_533879_uw_501_wh_251_hl_11802_l.jpg" alt=""></p>
+<p>最近在写微信小程序的接口调用并绑定处理数据，<br>发现微信小程序的原生的request，请求和业务代码写在一起，且不支持并发请求(最多5个)。<br>想写一个api工厂，统一管理请求函数，业务代码只关系返回数据的处理。修改一个url也不用到处去找调用的地方，代码优雅且方便维护。<br>说做就做：<br>小程序支持ES6的语法,可以使用<code>promise(anything).then((res)=&gt;{anything}).catch()</code>的方法解决小程序函数并发的问题.<br>想来可以使用promise封装一下wx.request，以达到axios的使用效果<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/25/promise封装微信小程序wx-request/#more" rel="contents">
