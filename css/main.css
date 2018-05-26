@@ -2089,7 +2089,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c7fb2f;
+  background: #fff466;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3221,4 +3221,17 @@ body::before {
 .footer {
   background: rgba(137,137,255,0.3);
   color: #f3f3f3;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 0px;
+  background: rgba(162,198,250,0.1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #7a99d9), color-stop(0.72, #497dbd), color-stop(0.86, #1c3a94));
 }
