@@ -39,7 +39,7 @@ $('#hitokoto').mouseover(function (){
 });
 
 $('.model-tool .fui-home').click(function (){
-    window.location = 'https://cutiepanther.github.io/';
+    window.location = 'strawburry.top';
 });
 
 $('.model-tool .fui-eye').click(function (){
@@ -96,7 +96,7 @@ $.ajax({
     var text;
     console.info('home',`${home_Path}`)
 
-    if(document.referrer !== '' && document.referrer.indexOf('cutiepanther') == -1){
+    if(document.referrer !== '' && document.referrer.indexOf('strawburry') == -1){
         var referrer = document.createElement('a');
         referrer.href = document.referrer;
         text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';
