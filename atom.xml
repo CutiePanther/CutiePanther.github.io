@@ -35,9 +35,9 @@
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
-      <category term="进阶" scheme="http://yoursite.com/tags/%E8%BF%9B%E9%98%B6/"/>
-    
       <category term="vue-router" scheme="http://yoursite.com/tags/vue-router/"/>
+    
+      <category term="进阶" scheme="http://yoursite.com/tags/%E8%BF%9B%E9%98%B6/"/>
     
   </entry>
   
@@ -126,9 +126,9 @@
     </summary>
     
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
       <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
       <category term="vue-router" scheme="http://yoursite.com/tags/vue-router/"/>
     
