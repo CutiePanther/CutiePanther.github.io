@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="vue,进阶," />
+  <meta name="keywords" content="vue,基础,vue-router," />
 
 
 
@@ -90,17 +90,19 @@
 
 
 <meta name="description" content="后端专注在数据上，前端专注在交互和可视化上单页应用spa：在前后端分离的基础上，加一层前端路由">
-<meta name="keywords" content="vue,进阶">
+<meta name="keywords" content="vue,基础,vue-router">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router">
 <meta property="og:url" content="http://yoursite.com/2018/05/20/vue-router/index.html">
 <meta property="og:site_name" content="Remain focused">
 <meta property="og:description" content="后端专注在数据上，前端专注在交互和可视化上单页应用spa：在前后端分离的基础上，加一层前端路由">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T17:20:17.802Z">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170113/539d5ba608774c0f99693f2d8c031d3a_th.jpg">
+<meta property="og:updated_time" content="2018-06-11T16:54:32.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-router">
 <meta name="twitter:description" content="后端专注在数据上，前端专注在交互和可视化上单页应用spa：在前后端分离的基础上，加一层前端路由">
+<meta name="twitter:image" content="http://img.mp.itc.cn/upload/20170113/539d5ba608774c0f99693f2d8c031d3a_th.jpg">
 
 
 
@@ -342,7 +344,8 @@
       
 
       
-        <p>后端专注在数据上，前端专注在交互和可视化上<br>单页应用spa：在前后端分离的基础上，加一层前端路由<br><a id="more"></a></p>
+        <p><img src="http://img.mp.itc.cn/upload/20170113/539d5ba608774c0f99693f2d8c031d3a_th.jpg" alt=""></p>
+<p>后端专注在数据上，前端专注在交互和可视化上<br>单页应用spa：在前后端分离的基础上，加一层前端路由<br><a id="more"></a></p>
 <h4 id="main-js引入依赖"><a href="#main-js引入依赖" class="headerlink" title="main.js引入依赖"></a>main.js引入依赖</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line">/* const Index = resolve =&gt; &#123;</span><br><span class="line">  require.ensure([&apos;../components/HelloFromVux.vue&apos;], () =&gt; &#123;</span><br><span class="line">    resolve(require(&apos;../components/HelloFromVux.vue&apos;))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125; */</span><br><span class="line">const Main = resolve =&gt; &#123;</span><br><span class="line">  require.ensure([&apos;../views/main.vue&apos;], () =&gt; &#123;</span><br><span class="line">    resolve(require(&apos;../views/main.vue&apos;))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">const Login = resolve =&gt; &#123;</span><br><span class="line">  require.ensure([&apos;../components/login.vue&apos;], () =&gt; &#123;</span><br><span class="line">    resolve(require(&apos;../components/login.vue&apos;))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">const routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;/&apos;,</span><br><span class="line">    name: &apos;main&apos;,</span><br><span class="line">    component: Main</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;/login&apos;,</span><br><span class="line">    name: &apos;login&apos;,</span><br><span class="line">    component: Login</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line">export default new Router(&#123;</span><br><span class="line">  mode: &apos;hash&apos;,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h4><blockquote>
 <p>Hash: 使用URL的hash值来作为路由。支持所有浏览器。<br><br>History: 以来HTML5 History API 和服务器配置。参考官网中HTML5 History模式 <br><br>Abstract： 支持所有javascript运行模式。如果发现没有浏览器的API，路由会自动强制进入这个模式。</p>
@@ -377,7 +380,9 @@
           
             <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
           
-            <a href="/tags/进阶/" rel="tag"><i class="fa fa-tag"></i> 进阶</a>
+            <a href="/tags/基础/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
+          
+            <a href="/tags/vue-router/" rel="tag"><i class="fa fa-tag"></i> vue-router</a>
           
         </div>
       
@@ -483,7 +488,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -496,7 +501,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -609,7 +614,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">20.2k</span> 字
+      博客全站共： <span class="post-count">21.5k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
