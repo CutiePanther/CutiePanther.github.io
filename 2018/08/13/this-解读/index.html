@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/live2d/css/live2d.css" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Remain focused" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="you don’t know javascript, this的使用方法https://github.com/getify/You-Dont-Know-JS/raw/master/scope%20%26%20closures/cover.jpg">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this 解读">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/this-解读/index.html">
+<meta property="og:site_name" content="Remain focused">
+<meta property="og:description" content="you don’t know javascript, this的使用方法https://github.com/getify/You-Dont-Know-JS/raw/master/scope%20%26%20closures/cover.jpg">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-13T02:44:01.424Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="this 解读">
+<meta name="twitter:description" content="you don’t know javascript, this的使用方法https://github.com/getify/You-Dont-Know-JS/raw/master/scope%20%26%20closures/cover.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"bounceDownIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/this-解读/"/>
+
+
+
+
+
+  <title>this 解读 | Remain focused</title>
+  
+
+
+
+
+
+
+
+
+  <div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  </div>
+  <div class="model-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+  </div>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	  <a href="https://github.com/CutiePanther"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Remain focused</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="sign">稀疏平常的每一帧日常，都有我们共度的痕迹</div>
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/this-解读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Grapelet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Remain focused">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">this 解读</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T10:27:25+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="you-don’t-know-javascript-this的使用方法"><a href="#you-don’t-know-javascript-this的使用方法" class="headerlink" title="you don’t know javascript, this的使用方法"></a>you don’t know javascript, this的使用方法</h6><p><a href="https://github.com/getify/You-Dont-Know-JS/raw/master/scope%20%26%20closures/cover.jpg" target="_blank" rel="noopener">https://github.com/getify/You-Dont-Know-JS/raw/master/scope%20%26%20closures/cover.jpg</a><br><a id="more"></a></p>
+<h1 id="判定-this"><a href="#判定-this" class="headerlink" title="判定 this"></a>判定 this</h1><p>现在，我们可以按照优先顺序来总结一下从函数调用的调用点来判定 this 的规则了。按照这个顺序来问问题，然后在第一个规则适用的地方停下。</p>
+<ol>
+<li>函数是通过 new 被调用的吗（new 绑定）？如果是，this 就是新构建的对象。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var bar = new foo()</span><br><span class="line">function foo () &#123;</span><br><span class="line">    console.log (this.a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>函数是通过 call 或 apply 被调用（明确绑定），甚至是隐藏在 bind 硬绑定 之中吗？如果是，this 就是那个被明确指定的对象。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var bar = foo.call( obj2 )</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>函数是通过环境对象（也称为拥有者或容器对象）被调用的吗（隐含绑定）？如果是，this 就是那个环境对象。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var bar = obj1.foo()</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>否则，使用默认的 this（默认绑定）。如果在 strict mode 下，就是 undefined，否则是 global 对象。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var bar = foo()</span><br></pre></td></tr></table></figure>
+<h1 id="向-this-绑定故意传递像-null-这样的值"><a href="#向-this-绑定故意传递像-null-这样的值" class="headerlink" title="向 this 绑定故意传递像 null 这样的值"></a>向 this 绑定故意传递像 null 这样的值</h1><p>一个很常见的做法是，使用 apply(..) 来将一个数组散开，从而作为函数调用的参数。相似地，bind(..) 可以柯里化参数（预设值），也可能非常有用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo(a,b) &#123;</span><br><span class="line">	console.log( &quot;a:&quot; + a + &quot;, b:&quot; + b );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 将数组散开作为参数</span><br><span class="line">foo.apply( null, [2, 3] ); // a:2, b:3</span><br><span class="line"></span><br><span class="line">// 用 `bind(..)` 进行柯里化</span><br><span class="line">var bar = foo.bind( null, 2 );</span><br><span class="line">bar( 3 ); // a:2, b:3</span><br></pre></td></tr></table></figure>
+<p>这两种工具都要求第一个参数是 this 绑定。如果目标函数不关心 this，你就需要一个占位值，而且正如这个代码段中展示的，null 看起来是一个合理的选择。</p>
+<blockquote>
+<p> ES6 中有一个扩散操作符：…，它让你无需使用 apply(..) 而在语法上将一个数组“散开”作为参数，比如 foo(…[1,2]) 表示 foo(1,2) —— 如果 this 绑定没有必要，可以在语法上回避它</p>
+</blockquote>
+<p><code>Object.create(null)</code>和 <code>{}</code> 很相似，但是没有指向 <code>Object.prototype</code> 的委托，所以它比 <code>{}</code> “空得更彻底”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function foo(a,b) &#123;</span><br><span class="line">	console.log( &quot;a:&quot; + a + &quot;, b:&quot; + b );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 我们的 DMZ 空对象</span><br><span class="line">var ø = Object.create( null );</span><br><span class="line"></span><br><span class="line">// 将数组散开作为参数</span><br><span class="line">foo.apply( ø, [2, 3] ); // a:2, b:3</span><br><span class="line"></span><br><span class="line">// 用 `bind(..)` 进行 currying</span><br><span class="line">var bar = foo.bind( ø, 2 );</span><br><span class="line">bar( 3 ); // a:2, b:3</span><br></pre></td></tr></table></figure>
+<p>不仅在功能上更“安全”，ø 还会在代码风格上产生些好处，它在语义上可能会比 null 更清晰的表达“我想让 this 为空”。</p>
+<h1 id="词法-this"><a href="#词法-this" class="headerlink" title="词法 this"></a>词法 this</h1><p>我们刚刚涵盖了一般函数遵守的四种规则。但是 ES6 引入了一种不适用于这些规则特殊的函数：箭头函数（arrow-function）。</p>
+<p>箭头函数不是通过 function 关键字声明的，而是通过所谓的“大箭头”操作符：<code>=&gt;</code>。与使用四种标准的 this 规则不同的是，箭头函数从封闭它的（函数或全局）作用域采用 this 绑定。</p>
+<p>我们来展示一下箭头函数的词法作用域：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  // 返回一个箭头函数</span><br><span class="line">	return (a) =&gt; &#123;</span><br><span class="line">    // 这里的 `this` 是词法上从 `foo()` 采用的</span><br><span class="line">		console.log( this.a );</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj1 = &#123;</span><br><span class="line">	a: 2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var obj2 = &#123;</span><br><span class="line">	a: 3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var bar = foo.call( obj1 );</span><br><span class="line">bar.call( obj2 ); // 2, 不是3!</span><br></pre></td></tr></table></figure>
+<p>在 foo() 中创建的箭头函数在词法上捕获 foo() 被调用时的 this，不管它是什么。因为 foo() 被 this 绑定到 obj1，bar（被返回的箭头函数的一个引用）也将会被 this 绑定到 obj1。一个箭头函数的词法绑定是不能被覆盖的（就连 new 也不行！）。</p>
+<p>最常见的用法是用于回调，比如事件处理器或计时器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	setTimeout(() =&gt; &#123;</span><br><span class="line">		// 这里的 `this` 是词法上从 `foo()` 采用</span><br><span class="line">		console.log( this.a );</span><br><span class="line">	&#125;,100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;</span><br><span class="line">	a: 2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">foo.call( obj ); // 2词法 this</span><br></pre></td></tr></table></figure>
+<p>虽然箭头函数提供除了使用 <code>bind(..)</code> 外，另外一种在函数上来确保 this 的方式，这看起来很吸引人，但重要的是要注意它们本质是使用广为人知的词法作用域来禁止了传统的 this 机制。在 ES6 之前，为此我们已经有了相当常用的模式，这些模式几乎和 ES6 的箭头函数的精神没有区别：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	var self = this; // 词法上捕获 `this`</span><br><span class="line">	setTimeout( function()&#123;</span><br><span class="line">		console.log( self.a );</span><br><span class="line">	&#125;, 100 );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;</span><br><span class="line">	a: 2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">foo.call( obj ); // 2</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>为执行中的函数判定 this 绑定需要找到这个函数的直接调用点。找到之后，四种规则将会以这种优先顺序施用于调用点：</p>
+<ol>
+<li><p>通过 new 调用？使用新构建的对象。</p>
+</li>
+<li><p>通过 call 或 apply（或 bind）调用？使用指定的对象。</p>
+</li>
+<li><p>通过持有调用的环境对象调用？使用那个环境对象。</p>
+</li>
+<li><p>默认：strict mode 下是 undefined，否则就是全局对象。</p>
+</li>
+</ol>
+<p>小心偶然或不经意的 默认绑定 规则调用。如果你想“安全”地忽略 this 绑定，一个像 <code>ø = Object.create(null)</code> 这样的“DMZ”对象是一个很好的占位值，以保护 global 对象不受意外的副作用影响。</p>
+<p>与这四种绑定规则不同，ES6 的箭头方法使用词法作用域来决定 this 绑定，这意味着它们采用封闭他们的函数调用作为 this 绑定（无论它是什么）。它们实质上是 ES6 之前的 <code>self = this</code> 代码的语法替代品。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/13/css-special-2/" rel="next" title="css special 2">
+                <i class="fa fa-chevron-left"></i> css special 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Grapelet" />
+            
+              <p class="site-author-name" itemprop="name">Grapelet</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/CutiePanther" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/1210141523/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/CutiePanther" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/helostraw" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#you-don’t-know-javascript-this的使用方法"><span class="nav-number">1.</span> <span class="nav-text">you don’t know javascript, this的使用方法</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判定-this"><span class="nav-number"></span> <span class="nav-text">判定 this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向-this-绑定故意传递像-null-这样的值"><span class="nav-number"></span> <span class="nav-text">向 this 绑定故意传递像 null 这样的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#词法-this"><span class="nav-number"></span> <span class="nav-text">词法 this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!-- 新增访客统计代码 -->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-balance-scale"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Grapelet</span>
+</div>
+
+<div class="busuanzi-count">
+    <script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <!-- 博客字数统计 -->
+    <span class="site-pv">
+      <i class="fa fa-pencil"></i>
+      博客全站共： <span class="post-count">25.1k</span> 字
+    </span>
+</div>
+<!-- 新增访客统计代码 END-->
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<script type="text/javascript" src="/js/src/love.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://strawburry.top/'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+</html>
