@@ -98,7 +98,7 @@
 <meta property="og:description" content="css常用属性">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3225363744,4220361311&fm=27&gp=0.jpg">
-<meta property="og:updated_time" content="2018-08-15T02:10:43.858Z">
+<meta property="og:updated_time" content="2018-08-15T06:21:45.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css special 2">
 <meta name="twitter:description" content="css常用属性">
@@ -376,6 +376,15 @@
 <p>h1 {<br>    letter-spacing: *px; //也可以是负数<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 图片运动过程中，图片模糊问题</span><br><span class="line">在animation过程中，图片会出现模糊的情况，可以设置如下在图片上面。</span><br><span class="line"></span><br><span class="line">`transform: translate3d(0, 0, 0);`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 使用margin auto</span><br></pre></td></tr></table></figure></p>
 <p>div {<br>  width: 100px;<br>  position: absolute;<br>  right: 0;<br>}</p>
 <p>// 使用margin-left: auto 自动算出做左边宽度，实现内容贴右边<br>div {<br>  width: 100px;<br>  margin-left: auto;<br>}<br><code>`</code></p>
+<h2 id="解决外边距合并"><a href="#解决外边距合并" class="headerlink" title="解决外边距合并"></a>解决外边距合并</h2><p>当不想让元素之间产生重叠，那么可以用一下方法</p>
+<ol>
+<li>外层元素padding代替</li>
+<li>内层元素透明边框 border: 1ox soild transparent</li>
+<li>内层元素绝对定位 position: absolute</li>
+<li>外层元素 overflow: hidden</li>
+<li>内层元素加 float:left 或 display:inline-block</li>
+<li>内层元素padding:1px</li>
+</ol>
 
       
     </div>
@@ -499,7 +508,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -512,7 +521,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -580,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#css常用属性"><span class="nav-number">1.</span> <span class="nav-text">css常用属性</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于现代浏览器，例如webkit内核的浏览器，或者移动端，是可以实现多行文本内容超出点点点…最后一行显示的，典型的CSS组合如下："><span class="nav-number"></span> <span class="nav-text">对于现代浏览器，例如webkit内核的浏览器，或者移动端，是可以实现多行文本内容超出点点点…最后一行显示的，典型的CSS组合如下：</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#css常用属性"><span class="nav-number">1.</span> <span class="nav-text">css常用属性</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于现代浏览器，例如webkit内核的浏览器，或者移动端，是可以实现多行文本内容超出点点点…最后一行显示的，典型的CSS组合如下："><span class="nav-number"></span> <span class="nav-text">对于现代浏览器，例如webkit内核的浏览器，或者移动端，是可以实现多行文本内容超出点点点…最后一行显示的，典型的CSS组合如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决外边距合并"><span class="nav-number"></span> <span class="nav-text">解决外边距合并</span></a></div>
             
 
           </div>
@@ -625,7 +634,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">25.0k</span> 字
+      博客全站共： <span class="post-count">25.5k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
