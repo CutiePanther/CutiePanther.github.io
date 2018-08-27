@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="plugin," />
+  <meta name="keywords" content="vue echarts," />
 
 
 
@@ -89,20 +89,20 @@
 
 
 
-<meta name="description" content="经常使用的小插件，归类记录, 持续跟新">
-<meta name="keywords" content="plugin">
+<meta name="description" content="前端数据可视化基础：vue中使用echart制表">
+<meta name="keywords" content="vue echarts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="plugin libs">
-<meta property="og:url" content="http://yoursite.com/2018/08/15/plugin-libs/index.html">
+<meta property="og:title" content="vue中使用echarts">
+<meta property="og:url" content="http://yoursite.com/2018/08/27/vue中使用echarts/index.html">
 <meta property="og:site_name" content="Remain focused">
-<meta property="og:description" content="经常使用的小插件，归类记录, 持续跟新">
+<meta property="og:description" content="前端数据可视化基础：vue中使用echart制表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534324827572&di=607874fe95b73dbe7266100d02dd9e97&imgtype=0&src=http%3A%2F%2Fwww.edu-hb.com%2FUpload%2FNewsImg%2F201601%2F29%2F160129230834jdegh.png">
-<meta property="og:updated_time" content="2018-08-27T07:50:34.734Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535370692958&di=72307e1b01a749bb43dfe3771d79c358&imgtype=0&src=http%3A%2F%2Fwww.ycu.com.cn%2Fxxcm%2FUpload%2F151537813651.jpg">
+<meta property="og:updated_time" content="2018-08-27T09:07:55.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="plugin libs">
-<meta name="twitter:description" content="经常使用的小插件，归类记录, 持续跟新">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534324827572&di=607874fe95b73dbe7266100d02dd9e97&imgtype=0&src=http%3A%2F%2Fwww.edu-hb.com%2FUpload%2FNewsImg%2F201601%2F29%2F160129230834jdegh.png">
+<meta name="twitter:title" content="vue中使用echarts">
+<meta name="twitter:description" content="前端数据可视化基础：vue中使用echart制表">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535370692958&di=72307e1b01a749bb43dfe3771d79c358&imgtype=0&src=http%3A%2F%2Fwww.ycu.com.cn%2Fxxcm%2FUpload%2F151537813651.jpg">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/15/plugin-libs/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/27/vue中使用echarts/"/>
 
 
 
 
 
-  <title>plugin libs | Remain focused</title>
+  <title>vue中使用echarts | Remain focused</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/plugin-libs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/vue中使用echarts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Grapelet">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">plugin libs</h1>
+          <h1 class="post-title" itemprop="name headline">vue中使用echarts</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T14:25:30+08:00">
-                2018-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T15:51:27+08:00">
+                2018-08-27
               </time>
             
 
@@ -344,13 +344,49 @@
       
 
       
-        <h3 id="经常使用的小插件，归类记录-持续跟新"><a href="#经常使用的小插件，归类记录-持续跟新" class="headerlink" title="经常使用的小插件，归类记录, 持续跟新"></a>经常使用的小插件，归类记录, 持续跟新</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1534324827572&amp;di=607874fe95b73dbe7266100d02dd9e97&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.edu-hb.com%2FUpload%2FNewsImg%2F201601%2F29%2F160129230834jdegh.png" alt=""><br><a id="more"></a></p>
-<h1 id="1-为适配屏幕尺寸，将css下的px转为rem"><a href="#1-为适配屏幕尺寸，将css下的px转为rem" class="headerlink" title="1.为适配屏幕尺寸，将css下的px转为rem"></a>1.为适配屏幕尺寸，将css下的px转为rem</h1><h2 id="安装插件-postcss-px2rem"><a href="#安装插件-postcss-px2rem" class="headerlink" title="安装插件 postcss-px2rem"></a>安装插件 postcss-px2rem</h2><p><code>npm install postcss-px2rem --save-dev</code></p>
-<h2 id="配置rem-js"><a href="#配置rem-js" class="headerlink" title="配置rem.js"></a>配置rem.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// rem 适配</span><br><span class="line">const baseSize = 75</span><br><span class="line">function refreshRem () &#123;</span><br><span class="line">  // 当前页面宽度相对于 1920 宽的缩放比例，可根据自己需要修改。</span><br><span class="line">  let wid = document.documentElement.clientWidth || window.innerWidth</span><br><span class="line">  const scale = wid / 1920</span><br><span class="line">  // 设置页面根节点字体大小</span><br><span class="line">  document.documentElement.style.fontSize = (baseSize * Math.min(scale, 2)) + &apos;px&apos;</span><br><span class="line">&#125;</span><br><span class="line">refreshRem()</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function () &#123;</span><br><span class="line">  setTimeout(refreshRem, 300)</span><br><span class="line">&#125;, false)</span><br><span class="line">window.addEventListener(&apos;pageshow&apos;, function (e) &#123;</span><br><span class="line">  if (e.persisted) &#123;</span><br><span class="line">    setTimeout(refreshRem, 300)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, false)</span><br></pre></td></tr></table></figure>
-<h2 id="main-js-引入"><a href="#main-js-引入" class="headerlink" title="main.js 引入"></a>main.js 引入</h2><p><code>import &#39;./libs/rem&#39;</code></p>
-<h2 id="vue-loader-conf-js-配置px2rem"><a href="#vue-loader-conf-js-配置px2rem" class="headerlink" title="vue-loader.conf.js 配置px2rem"></a>vue-loader.conf.js 配置px2rem</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;</span><br><span class="line">const utils = require(&apos;./utils&apos;)</span><br><span class="line">const config = require(&apos;../config&apos;)</span><br><span class="line">const isProduction = process.env.NODE_ENV === &apos;production&apos;</span><br><span class="line">const sourceMapEnabled = isProduction</span><br><span class="line">  ? config.build.productionSourceMap</span><br><span class="line">  : config.dev.cssSourceMap</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  loaders: utils.cssLoaders(&#123;</span><br><span class="line">    sourceMap: sourceMapEnabled,</span><br><span class="line">    extract: isProduction</span><br><span class="line">  &#125;),</span><br><span class="line">  postcss: [</span><br><span class="line">    require(&apos;postcss-px2rem&apos;)(&#123;</span><br><span class="line">      remUnit:75</span><br><span class="line">    &#125;)</span><br><span class="line">  ],</span><br><span class="line">  cssSourceMap: sourceMapEnabled,</span><br><span class="line">  cacheBusting: config.dev.cacheBusting,</span><br><span class="line">  transformToRequire: &#123;</span><br><span class="line">    video: [&apos;src&apos;, &apos;poster&apos;],</span><br><span class="line">    source: &apos;src&apos;,</span><br><span class="line">    img: &apos;src&apos;,</span><br><span class="line">    image: &apos;xlink:href&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-判断移动端"><a href="#2-判断移动端" class="headerlink" title="2.判断移动端"></a>2.判断移动端</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    name: &apos;app&apos;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      check () &#123;</span><br><span class="line">        var isMobile = navigator.userAgent.toLowerCase().match(/(ipod|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null</span><br><span class="line">        if (isMobile) &#123;</span><br><span class="line">          window.location.href = &apos;http://10.88.190.5:3000/#/&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted () &#123;</span><br><span class="line">      this.check()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="3-百度统计"><a href="#3-百度统计" class="headerlink" title="3.百度统计"></a>3.百度统计</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var _hmt = _hmt || [];</span><br><span class="line">  (function() &#123;</span><br><span class="line">    var hm = document.createElement(&quot;script&quot;);</span><br><span class="line">    hm.src = &quot;https://hm.baidu.com/hm.js?2834afb8ffce3f0093179a8cce534df9&quot;;</span><br><span class="line">    var s = document.getElementsByTagName(&quot;script&quot;)[0];</span><br><span class="line">    s.parentNode.insertBefore(hm, s);</span><br><span class="line">  &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">// 添加路由拦截统计每一次路由跳转</span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  // this route requires auth, check if logged in</span><br><span class="line">  // if not, redirect to login page.</span><br><span class="line">  // 统计代码</span><br><span class="line">  if (to.path) &#123;</span><br><span class="line">    _hmt.push([&apos;_trackPageview&apos;, &apos;/#&apos; + to.fullPath])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="前端数据可视化基础：vue中使用echart制表"><a href="#前端数据可视化基础：vue中使用echart制表" class="headerlink" title="前端数据可视化基础：vue中使用echart制表"></a>前端数据可视化基础：vue中使用echart制表</h4><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1535370692958&amp;di=72307e1b01a749bb43dfe3771d79c358&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.ycu.com.cn%2Fxxcm%2FUpload%2F151537813651.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="vue-cli中直接使用echarts-绘制地图等复杂图表"><a href="#vue-cli中直接使用echarts-绘制地图等复杂图表" class="headerlink" title="vue-cli中直接使用echarts(绘制地图等复杂图表)"></a>vue-cli中直接使用echarts(绘制地图等复杂图表)</h1><h2 id="全局引入"><a href="#全局引入" class="headerlink" title="全局引入"></a>全局引入</h2><blockquote>
+<p>main.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 引入echarts 然后修改原型链</span><br><span class="line">import echarts from &apos;echarts&apos;</span><br><span class="line"></span><br><span class="line">Vue.prototype.$echarts = echarts</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建容器<br>需要注意图表的容器必须指定宽高，也就是说 width，height 不能使用百分比，只能用 px<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;myChart&quot; style=&quot;width=300px;height=300px;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>全局使用,在 mounted 中创建图表</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let myChart = this.$echarts.init(document.getElementById(&apos;myChart&apos;))</span><br><span class="line">myChart.setOption(options)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意： 这里echarts初始化应在钩子函数mounted()中，这个钩子函数是在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用</p>
+</blockquote>
+<blockquote>
+<p>地图绘制需要加载json文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    initMap () &#123;</span><br><span class="line">      // 缓存this指代data</span><br><span class="line">      let that = this</span><br><span class="line">      let mapCharts = that.$echarts.init(</span><br><span class="line">        document.getElementById(&apos;provinceMap&apos;)</span><br><span class="line">      )</span><br><span class="line">      $.getJSON(that.positionJsonLink, function (geoJson) &#123;</span><br><span class="line">        that.$echarts.registerMap(that.position, geoJson)</span><br><span class="line">        mapCharts.setOption(options)</span><br><span class="line">      &#125;)</span><br><span class="line">      // 地图点击事件</span><br><span class="line">      mapCharts.on(&apos;click&apos;, function (params) &#123;</span><br><span class="line">        for (var i = 0; i &lt; data.length; i++) &#123;&#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>同理初始化在mounted()中</p>
+</blockquote>
+<blockquote>
+<p>jquery引入</p>
+</blockquote>
+<blockquote>
+<p>修改build/webpack.base.conf.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const webpack = require(&apos;webpack&apos;)</span><br><span class="line"></span><br><span class="line">// 在module.exports 添加属性</span><br><span class="line"></span><br><span class="line">plugins: [</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    jQuery: &quot;jquery&quot;,</span><br><span class="line">    $: &quot;jquery&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>适应容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;myChart&quot; :height=&quot;chartHeight + &apos;px&apos;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  chartHeight () &#123;</span><br><span class="line">    let screen = document.documentElement.offsetWidth</span><br><span class="line">    return screen &gt;= 1920 ? 310 : screen &gt;= 1366 ? 300 : 280</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用-v-charts-基础表格推荐使用此方法"><a href="#使用-v-charts-基础表格推荐使用此方法" class="headerlink" title="使用 v-charts(基础表格推荐使用此方法)"></a>使用 v-charts(基础表格推荐使用此方法)</h1><h2 id="基于vue封装的echarts开源项目v-charts"><a href="#基于vue封装的echarts开源项目v-charts" class="headerlink" title="基于vue封装的echarts开源项目v-charts"></a>基于vue封装的echarts开源项目<a href="https://v-charts.js.org/#/" target="_blank" rel="noopener">v-charts</a></h2><blockquote>
+<p>全局引入</p>
+</blockquote>
+<blockquote>
+<p>可以按照文档使用，也可以直接绑定series</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ve-pie :height=&quot;chartHeight + &apos;px&apos;&quot; :legend-visible=&quot;false&quot; :series=&quot;series&quot;&gt;&lt;/ve-pie&gt;</span><br><span class="line"></span><br><span class="line">// 在series的data中注册series</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><a href="https://v-charts.js.org/#/" target="_blank" rel="noopener">vue封装</a> </p>
+<p><a href="http://echarts.baidu.com/option.html" target="_blank" rel="noopener">echarts文档</a></p>
+
       
     </div>
     
@@ -367,7 +403,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/plugin/" rel="tag"><i class="fa fa-tag"></i> plugin</a>
+            <a href="/tags/vue-echarts/" rel="tag"><i class="fa fa-tag"></i> vue echarts</a>
           
         </div>
       
@@ -380,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/this-解读/" rel="next" title="this 解读">
-                <i class="fa fa-chevron-left"></i> this 解读
+              <a href="/2018/08/15/plugin-libs/" rel="next" title="plugin libs">
+                <i class="fa fa-chevron-left"></i> plugin libs
               </a>
             
           </div>
@@ -389,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/27/vue中使用echarts/" rel="prev" title="vue中使用echarts">
-                vue中使用echarts <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -554,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#经常使用的小插件，归类记录-持续跟新"><span class="nav-number">1.</span> <span class="nav-text">经常使用的小插件，归类记录, 持续跟新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-为适配屏幕尺寸，将css下的px转为rem"><span class="nav-number"></span> <span class="nav-text">1.为适配屏幕尺寸，将css下的px转为rem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件-postcss-px2rem"><span class="nav-number"></span> <span class="nav-text">安装插件 postcss-px2rem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置rem-js"><span class="nav-number"></span> <span class="nav-text">配置rem.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main-js-引入"><span class="nav-number"></span> <span class="nav-text">main.js 引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-loader-conf-js-配置px2rem"><span class="nav-number"></span> <span class="nav-text">vue-loader.conf.js 配置px2rem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-判断移动端"><span class="nav-number"></span> <span class="nav-text">2.判断移动端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-百度统计"><span class="nav-number"></span> <span class="nav-text">3.百度统计</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前端数据可视化基础：vue中使用echart制表"><span class="nav-number">1.</span> <span class="nav-text">前端数据可视化基础：vue中使用echart制表</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-cli中直接使用echarts-绘制地图等复杂图表"><span class="nav-number"></span> <span class="nav-text">vue-cli中直接使用echarts(绘制地图等复杂图表)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局引入"><span class="nav-number"></span> <span class="nav-text">全局引入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-v-charts-基础表格推荐使用此方法"><span class="nav-number"></span> <span class="nav-text">使用 v-charts(基础表格推荐使用此方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于vue封装的echarts开源项目v-charts"><span class="nav-number"></span> <span class="nav-text">基于vue封装的echarts开源项目v-charts</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
             
 
           </div>
