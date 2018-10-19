@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-18T06:33:13.528Z</updated>
+  <updated>2018-10-19T09:05:00.320Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>es6 new methods</title>
+    <link href="http://yoursite.com/2018/10/19/es6-new-methods/"/>
+    <id>http://yoursite.com/2018/10/19/es6-new-methods/</id>
+    <published>2018-10-19T09:03:11.000Z</published>
+    <updated>2018-10-19T09:05:00.320Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="es6中操作数组的常用方法"><a href="#es6中操作数组的常用方法" class="headerlink" title="es6中操作数组的常用方法"></a>es6中操作数组的常用方法</h4><p><img src="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32" alt="image"><br><a id="more"></a></p><h1 id="数组中的forEach-、map-、filter-、reduce-、some-、every"><a href="#数组中的forEach-、map-、filter-、reduce-、some-、every" class="headerlink" title="数组中的forEach() 、map()、filter()、reduce()、some()、every()"></a>数组中的forEach() 、map()、filter()、reduce()、some()、every()</h1><h3 id="1、forEach"><a href="#1、forEach" class="headerlink" title="1、forEach()"></a>1、forEach()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.forEach((item,index,arr) =&gt; &#123;</span><br><span class="line">    console.log(item) //结果为1,2,3,4</span><br><span class="line">&#125;)</span><br><span class="line">// forEach遍历数组，无返回值，不改变原数组，</span><br><span class="line">// 仅仅只是遍历、常用于注册组件、指令等等。</span><br></pre></td></tr></table></figure><h3 id="2、map"><a href="#2、map" class="headerlink" title="2、map()"></a>2、map()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.map((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item*10 //新数组为10,20,30,40</span><br><span class="line">&#125;)</span><br><span class="line">// map遍历数组，返回一个新数组，不改变原数组的值。</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">let newArr = arr.map(item =&gt; item*10)</span><br></pre></td></tr></table></figure><h3 id="3、filter"><a href="#3、filter" class="headerlink" title="3、filter()"></a>3、filter()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.filter((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 2 //新数组为[3,4]</span><br><span class="line">&#125;)</span><br><span class="line">// filter过滤掉数组中不满足条件的值，返回一个新数组，</span><br><span class="line">// 不改变原数组的值。</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">let newArr = arr.filter(item =&gt; item &gt; 2)</span><br></pre></td></tr></table></figure><h3 id="4、reduce"><a href="#4、reduce" class="headerlink" title="4、reduce()"></a>4、reduce()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.reduce((result,item,index,arr) =&gt; &#123;</span><br><span class="line">    console.log(result) // 1  3  6  result为上次一计算的结果</span><br><span class="line">    console.log(item)  // 2  3  4</span><br><span class="line">    console.log(index) // 1  2  3</span><br><span class="line">    return result+item //最终结果为10</span><br><span class="line">&#125;)</span><br><span class="line">// reduce 让数组的前后两项进行某种计算。然后返回其值，并继续计算。</span><br><span class="line">// 不改变原数组，返回计算的最终结果，从数组的第二项开始遍历。</span><br></pre></td></tr></table></figure><h3 id="5、some"><a href="#5、some" class="headerlink" title="5、some()"></a>5、some()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.some((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 3 //结果为true</span><br><span class="line">&#125;)</span><br><span class="line">// 遍历数组每一项，有一项返回true,则停止遍历，结果返回true。</span><br><span class="line">// 不改变原数组</span><br></pre></td></tr></table></figure><h3 id="6、every"><a href="#6、every" class="headerlink" title="6、every()"></a>6、every()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.every((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 1 //结果为false</span><br><span class="line">&#125;)</span><br><span class="line">//遍历数组每一项，每一项返回true,则最终结果为true。</span><br><span class="line">当任何一项返回false时，停止遍历，返回false。不改变原数组</span><br></pre></td></tr></table></figure><blockquote><p>以上6个方法均为ES6语法，IE9及以上才支持。不过可以通过babel转意支持IE低版本。</p></blockquote><h3 id="7、tips"><a href="#7、tips" class="headerlink" title="7、tips"></a>7、tips</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">  以上均不改变原数组。 </span><br><span class="line">  some、every返回true、false。 </span><br><span class="line">  map、filter返回一个新数组。 </span><br><span class="line">  reduce让数组的前后两项进行某种计算，返回最终操作的结果。 </span><br><span class="line">  forEach 无返回值。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure><hr><h1 id="es6-常用特性"><a href="#es6-常用特性" class="headerlink" title="es6 常用特性"></a>es6 常用特性</h1><ol><li>Default Parameters（默认参数） in ES6</li><li>Template Literals （模板文本）in ES6</li><li>Multi-line Strings （多行字符串）in ES6</li><li>Destructuring Assignment （解构赋值）in ES6</li><li>Enhanced Object Literals （增强的对象文本）in ES6</li><li>Arrow Functions （箭头函数）in ES6</li><li>Promises in ES6</li><li>Block-Scoped Constructs Let and Const（块作用域构造Let and Const）</li><li>Classes（类） in ES6</li><li>Modules（模块） in ES6</li></ol><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;es6中操作数组的常用方法&quot;&gt;&lt;a href=&quot;#es6中操作数组的常用方法&quot; class=&quot;headerlink&quot; title=&quot;es6中操作数组的常用方法&quot;&gt;&lt;/a&gt;es6中操作数组的常用方法&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
+    
+  </entry>
   
   <entry>
     <title>Async-Await异步编程</title>
@@ -175,9 +195,9 @@
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
-      <category term="vue-router" scheme="http://yoursite.com/tags/vue-router/"/>
-    
       <category term="进阶" scheme="http://yoursite.com/tags/%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="vue-router" scheme="http://yoursite.com/tags/vue-router/"/>
     
   </entry>
   
@@ -414,26 +434,6 @@
     
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速起步vue-cli</title>
-    <link href="http://yoursite.com/2018/05/12/%E5%BF%AB%E9%80%9F%E8%B5%B7%E6%AD%A5vue-cli/"/>
-    <id>http://yoursite.com/2018/05/12/快速起步vue-cli/</id>
-    <published>2018-05-12T15:57:08.000Z</published>
-    <updated>2018-05-15T12:15:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h6 id="vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，GitHub地址是："><a href="#vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，GitHub地址是：" class="headerlink" title="vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，GitHub地址是："></a>vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，GitHub地址是：</h6><h5 id="gt-https-github-com-vuejs-vue-cli"><a href="#gt-https-github-com-vuejs-vue-cli" class="headerlink" title="&gt; https://github.com/vuejs/vue-cli"></a>&gt; <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">https://github.com/vuejs/vue-cli</a></h5><a id="more"></a><h5 id="一、-安装-node-js"><a href="#一、-安装-node-js" class="headerlink" title="一、 安装 node.js"></a>一、 安装 node.js</h5><p>首先需要安装node环境，可以直接到中文官网</p><blockquote><p><a href="http://nodejs.cn/" target="_blank" rel="noopener">http://nodejs.cn/</a></p></blockquote><p>下载安装包。</p><p>只是这样安装的 node 是固定版本的，如果需要多版本的 node，可以使用 nvm 安装</p><blockquote><p><a href="http://blog.csdn.net/s8460049/article/details/52396399" target="_blank" rel="noopener">http://blog.csdn.net/s8460049/article/details/52396399</a></p></blockquote><p>安装完成后，可以命令行工具中输入 node -v 和 npm -v，如果能显示出版本号，就说明安装成功。</p><h5 id="二、安装-vue-cli"><a href="#二、安装-vue-cli" class="headerlink" title="二、安装 vue-cli"></a>二、安装 vue-cli</h5><p>安装好了 node，我们可以直接全局安装 vue-cli：</p><blockquote><p>npm install -g vue-cli</p></blockquote><p>但是这种安装方式比较慢，推荐使用国内镜像来安装，所以我们先设置 cnpm：</p><blockquote><p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p></blockquote><p>如果安装失败，可以使用 npm cache clean 清理缓存，然后再重新安装。后面的安装过程中，如有安装失败的情况，也需要先清理缓存</p><p>同样可以使用 cnpm -v 查看是否安装成功</p><p>然后使用 cnpm 安装 vue-cli 和 webpack</p><blockquote><p>cnpm install -g vue-cli</p></blockquote><p>最新的 vue 项目模板中，都带有 webpack 插件，所以这里可以不安装 webpack</p><p>安装完成后，可以使用 vue -V （注意 V 大写）查看是否安装成功。</p><blockquote><p>如果提示“无法识别 ‘vue’ ” ，有可能是 npm 版本过低，可以使用 npm install -g npm 来更新版本</p></blockquote><h5 id="三、生成项目"><a href="#三、生成项目" class="headerlink" title="三、生成项目"></a>三、生成项目</h5><p>首先需要在命令行中进入到项目目录，然后输入：</p><blockquote><p>vue init webpack Vue-Project</p></blockquote><p>其中 webpack 是模板名称，可以到 vue.js 的 GitHub 上查看更多的模板</p><blockquote><p><a href="https://github.com/vuejs-templates" target="_blank" rel="noopener">https://github.com/vuejs-templates</a></p></blockquote><p>Vue-Project 是自定义的项目名称，命令执行之后，会在当前目录生成一个以该名称命名的项目文件夹</p><p><img src="http://images2015.cnblogs.com/blog/1059788/201701/1059788-20170106133950378-145408144.png" alt="image"></p><p>配置完成后，可以看到目录下多出了一个项目文件夹，里面就是 vue-cli 创建的一个基于 webpack 的 vue.js 项目</p><p>然后进入项目目录（cd Vue-Project），使用 cnpm 安装依赖</p><blockquote><p>cnpm install</p></blockquote><p>然后启动项目</p><blockquote><p>npm run dev</p></blockquote><p>如果浏览器打开之后，没有加载出页面，有可能是本地的 8080 端口被占用，需要修改一下配置文件</p><blockquote><p>config&gt;index.js</p></blockquote><p> <img src="http://images2015.cnblogs.com/blog/1059788/201701/1059788-20170106135204409-1735535107.png" alt="image"></p><p>建议将端口号改为不常用的端口。另外我还将 build 的路径前缀修改为 ‘ ./ ‘（原本为 ‘ / ‘），是因为打包之后，外部引入 js 和 css 文件时，如果路径以 ‘ / ‘ 开头，在本地是无法找到对应文件的（服务器上没问题）。所以如果需要在本地打开打包后的文件，就得修改文件路径。</p><p>四、打包上线</p><p>自己的项目文件都需要放到 src 文件夹下</p><p>项目开发完成之后，可以输入</p><blockquote><p>npm run build</p></blockquote><p>来进行打包工作</p><p>npm run build<br>打包完成后，会生成 dist 文件夹，如果已经修改了文件路径，可以直接打开本地文件查看</p><p>项目上线时，只需要将 dist 文件夹放到服务器就行了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h6 id=&quot;vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，GitHub地址是：&quot;&gt;&lt;a href=&quot;#vue-cli-是一个官方发布-vue-js-项目脚手架，使用-vue-cli-可以快速创建-vue-项目，GitHub地址是：&quot; class=&quot;headerlink&quot; title=&quot;vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，GitHub地址是：&quot;&gt;&lt;/a&gt;vue-cli 是一个官方发布 vue.js 项目脚手架，使用 vue-cli 可以快速创建 vue 项目，GitHub地址是：&lt;/h6&gt;&lt;h5 id=&quot;gt-https-github-com-vuejs-vue-cli&quot;&gt;&lt;a href=&quot;#gt-https-github-com-vuejs-vue-cli&quot; class=&quot;headerlink&quot; title=&quot;&amp;gt; https://github.com/vuejs/vue-cli&quot;&gt;&lt;/a&gt;&amp;gt; &lt;a href=&quot;https://github.com/vuejs/vue-cli&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/vuejs/vue-cli&lt;/a&gt;&lt;/h5&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript vuejs vuecli" scheme="http://yoursite.com/tags/javascript-vuejs-vuecli/"/>
     
   </entry>
   

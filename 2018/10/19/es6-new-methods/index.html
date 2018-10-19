@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -89,18 +89,20 @@
 
 
 
-<meta name="description" content="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥">
-<meta name="keywords" content="git">
+<meta name="description" content="es6中操作数组的常用方法">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git添加ssh密钥">
-<meta property="og:url" content="http://yoursite.com/2018/05/13/git添加ssh密钥/index.html">
+<meta property="og:title" content="es6 new methods">
+<meta property="og:url" content="http://yoursite.com/2018/10/19/es6-new-methods/index.html">
 <meta property="og:site_name" content="Remain focused">
-<meta property="og:description" content="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥">
+<meta property="og:description" content="es6中操作数组的常用方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-20T06:36:36.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32">
+<meta property="og:updated_time" content="2018-10-19T09:05:00.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git添加ssh密钥">
-<meta name="twitter:description" content="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥">
+<meta name="twitter:title" content="es6 new methods">
+<meta name="twitter:description" content="es6中操作数组的常用方法">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32">
 
 
 
@@ -130,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/13/git添加ssh密钥/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/19/es6-new-methods/"/>
 
 
 
 
 
-  <title>git添加ssh密钥 | Remain focused</title>
+  <title>es6 new methods | Remain focused</title>
   
 
 
@@ -275,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/git添加ssh密钥/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/es6-new-methods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Grapelet">
@@ -292,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git添加ssh密钥</h1>
+          <h1 class="post-title" itemprop="name headline">es6 new methods</h1>
         
 
         <div class="post-meta">
@@ -304,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T00:03:27+08:00">
-                2018-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T17:03:11+08:00">
+                2018-10-19
               </time>
             
 
@@ -342,38 +344,32 @@
       
 
       
-        <h6 id="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥"><a href="#秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥" class="headerlink" title="秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥"></a>秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥</h6><a id="more"></a>
-<p>1、设置Git的user name和email：(如果是第一次的话)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    $ git config --global user.name &quot;yourname&quot;</span><br><span class="line">$ git config --global user.email &quot;youname@gmail.com&quot;</span><br></pre></td></tr></table></figure>
-<p>2、生成密钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;yourname@gmail.come&quot;</span><br></pre></td></tr></table></figure>
-<p>连续3个回车。如果不需要密码的话。<br>最后得到了两个文件：id_rsa和id_rsa.pub。</p>
-<p>如果不是第一次，就选择overwrite.</p>
-<p>3、添加密钥到ssh-agent<br>确保 ssh-agent 是可用的。ssh-agent是一种控制用来保存公钥身份验证所使用的私钥的程序，其实ssh-agent就是一个密钥管理器，运行ssh-agent以后，使用ssh-add将私钥交给ssh-agent保管，其他程序需要身份验证的时候可以将验证申请交给ssh-agent来完成整个认证过程。</p>
-<pre><code># start the ssh-agent in the background
-eval &quot;$(ssh-agent -s)&quot;
-Agent pid 59566
-</code></pre><p>添加生成的 SSH key 到 ssh-agent。</p>
-<pre><code>$ ssh-add ~/.ssh/id_rsa
-</code></pre><p>4、登陆Github, 添加 ssh 。<br>把id_rsa.pub文件里的内容复制到这里</p>
-<p>5、测试：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>你将会看到：</p>
-<pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
-RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-Are you sure you want to continue connecting (yes/no)?
-</code></pre><p>选择 yes</p>
-<pre><code>Hi yourname! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><p>如果看到Hi后面是你的用户名，就说明成功了。</p>
-<p>6、修改.git文件夹下config中的url。<br>修改前</p>
-<pre><code>[remote &quot;origin&quot;]
-url = https://github.com/humingx/yourname.github.io.git
-fetch = +refs/heads/*:refs/remotes/origin/*
-</code></pre><p>修改后</p>
-<pre><code>[remote &quot;origin&quot;]
-url = git@github.com:humingx/yourname.github.io.git
-fetch = +refs/heads/*:refs/remotes/origin/*
-</code></pre>
+        <h4 id="es6中操作数组的常用方法"><a href="#es6中操作数组的常用方法" class="headerlink" title="es6中操作数组的常用方法"></a>es6中操作数组的常用方法</h4><p><img src="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32" alt="image"><br><a id="more"></a></p>
+<h1 id="数组中的forEach-、map-、filter-、reduce-、some-、every"><a href="#数组中的forEach-、map-、filter-、reduce-、some-、every" class="headerlink" title="数组中的forEach() 、map()、filter()、reduce()、some()、every()"></a>数组中的forEach() 、map()、filter()、reduce()、some()、every()</h1><h3 id="1、forEach"><a href="#1、forEach" class="headerlink" title="1、forEach()"></a>1、forEach()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.forEach((item,index,arr) =&gt; &#123;</span><br><span class="line">    console.log(item) //结果为1,2,3,4</span><br><span class="line">&#125;)</span><br><span class="line">// forEach遍历数组，无返回值，不改变原数组，</span><br><span class="line">// 仅仅只是遍历、常用于注册组件、指令等等。</span><br></pre></td></tr></table></figure>
+<h3 id="2、map"><a href="#2、map" class="headerlink" title="2、map()"></a>2、map()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.map((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item*10 //新数组为10,20,30,40</span><br><span class="line">&#125;)</span><br><span class="line">// map遍历数组，返回一个新数组，不改变原数组的值。</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">let newArr = arr.map(item =&gt; item*10)</span><br></pre></td></tr></table></figure>
+<h3 id="3、filter"><a href="#3、filter" class="headerlink" title="3、filter()"></a>3、filter()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.filter((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 2 //新数组为[3,4]</span><br><span class="line">&#125;)</span><br><span class="line">// filter过滤掉数组中不满足条件的值，返回一个新数组，</span><br><span class="line">// 不改变原数组的值。</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">let newArr = arr.filter(item =&gt; item &gt; 2)</span><br></pre></td></tr></table></figure>
+<h3 id="4、reduce"><a href="#4、reduce" class="headerlink" title="4、reduce()"></a>4、reduce()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.reduce((result,item,index,arr) =&gt; &#123;</span><br><span class="line">    console.log(result) // 1  3  6  result为上次一计算的结果</span><br><span class="line">    console.log(item)  // 2  3  4</span><br><span class="line">    console.log(index) // 1  2  3</span><br><span class="line">    return result+item //最终结果为10</span><br><span class="line">&#125;)</span><br><span class="line">// reduce 让数组的前后两项进行某种计算。然后返回其值，并继续计算。</span><br><span class="line">// 不改变原数组，返回计算的最终结果，从数组的第二项开始遍历。</span><br></pre></td></tr></table></figure>
+<h3 id="5、some"><a href="#5、some" class="headerlink" title="5、some()"></a>5、some()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.some((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 3 //结果为true</span><br><span class="line">&#125;)</span><br><span class="line">// 遍历数组每一项，有一项返回true,则停止遍历，结果返回true。</span><br><span class="line">// 不改变原数组</span><br></pre></td></tr></table></figure>
+<h3 id="6、every"><a href="#6、every" class="headerlink" title="6、every()"></a>6、every()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.every((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 1 //结果为false</span><br><span class="line">&#125;)</span><br><span class="line">//遍历数组每一项，每一项返回true,则最终结果为true。</span><br><span class="line">当任何一项返回false时，停止遍历，返回false。不改变原数组</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上6个方法均为ES6语法，IE9及以上才支持。不过可以通过babel转意支持IE低版本。</p>
+</blockquote>
+<h3 id="7、tips"><a href="#7、tips" class="headerlink" title="7、tips"></a>7、tips</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">  以上均不改变原数组。 </span><br><span class="line">  some、every返回true、false。 </span><br><span class="line">  map、filter返回一个新数组。 </span><br><span class="line">  reduce让数组的前后两项进行某种计算，返回最终操作的结果。 </span><br><span class="line">  forEach 无返回值。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="es6-常用特性"><a href="#es6-常用特性" class="headerlink" title="es6 常用特性"></a>es6 常用特性</h1><ol>
+<li>Default Parameters（默认参数） in ES6</li>
+<li>Template Literals （模板文本）in ES6</li>
+<li>Multi-line Strings （多行字符串）in ES6</li>
+<li>Destructuring Assignment （解构赋值）in ES6</li>
+<li>Enhanced Object Literals （增强的对象文本）in ES6</li>
+<li>Arrow Functions （箭头函数）in ES6</li>
+<li>Promises in ES6</li>
+<li>Block-Scoped Constructs Let and Const（块作用域构造Let and Const）</li>
+<li>Classes（类） in ES6</li>
+<li>Modules（模块） in ES6</li>
+</ol>
+<hr>
+
       
     </div>
     
@@ -390,7 +386,7 @@ fetch = +refs/heads/*:refs/remotes/origin/*
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+            <a href="/tags/es6/" rel="tag"><i class="fa fa-tag"></i> es6</a>
           
         </div>
       
@@ -403,8 +399,8 @@ fetch = +refs/heads/*:refs/remotes/origin/*
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/13/sass语法/" rel="next" title="sass语法">
-                <i class="fa fa-chevron-left"></i> sass语法
+              <a href="/2018/10/18/Async-Await异步编程/" rel="next" title="Async-Await异步编程">
+                <i class="fa fa-chevron-left"></i> Async-Await异步编程
               </a>
             
           </div>
@@ -412,10 +408,6 @@ fetch = +refs/heads/*:refs/remotes/origin/*
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/13/proxyTable解决跨域问题/" rel="prev" title="proxyTable解决跨域问题">
-                proxyTable解决跨域问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,7 +569,7 @@ fetch = +refs/heads/*:refs/remotes/origin/*
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥"><span class="nav-number">1.</span> <span class="nav-text">秉承能偷懒就偷懒的原则（不想输密码），为你的git仓库添加ssh密钥</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#es6中操作数组的常用方法"><span class="nav-number">1.</span> <span class="nav-text">es6中操作数组的常用方法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组中的forEach-、map-、filter-、reduce-、some-、every"><span class="nav-number"></span> <span class="nav-text">数组中的forEach() 、map()、filter()、reduce()、some()、every()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、forEach"><span class="nav-number"></span> <span class="nav-text">1、forEach()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、map"><span class="nav-number"></span> <span class="nav-text">2、map()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、filter"><span class="nav-number"></span> <span class="nav-text">3、filter()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、reduce"><span class="nav-number"></span> <span class="nav-text">4、reduce()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、some"><span class="nav-number"></span> <span class="nav-text">5、some()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、every"><span class="nav-number"></span> <span class="nav-text">6、every()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、tips"><span class="nav-number"></span> <span class="nav-text">7、tips</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#es6-常用特性"><span class="nav-number"></span> <span class="nav-text">es6 常用特性</span></a></div>
             
 
           </div>
