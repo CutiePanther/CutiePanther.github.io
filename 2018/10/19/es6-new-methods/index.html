@@ -97,12 +97,12 @@
 <meta property="og:site_name" content="Remain focused">
 <meta property="og:description" content="es6中操作数组的常用方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32">
-<meta property="og:updated_time" content="2018-10-19T09:05:00.320Z">
+<meta property="og:image" content="http://www.redwall.ee/images/blog/tarkvaratrendid2016/es6.jpg">
+<meta property="og:updated_time" content="2018-10-29T07:14:20.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6 new methods">
 <meta name="twitter:description" content="es6中操作数组的常用方法">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32">
+<meta name="twitter:image" content="http://www.redwall.ee/images/blog/tarkvaratrendid2016/es6.jpg">
 
 
 
@@ -344,7 +344,7 @@
       
 
       
-        <h4 id="es6中操作数组的常用方法"><a href="#es6中操作数组的常用方法" class="headerlink" title="es6中操作数组的常用方法"></a>es6中操作数组的常用方法</h4><p><img src="https://upload-images.jianshu.io/upload_images/9146767-7de96f91d82c6f32" alt="image"><br><a id="more"></a></p>
+        <h4 id="es6中操作数组的常用方法"><a href="#es6中操作数组的常用方法" class="headerlink" title="es6中操作数组的常用方法"></a>es6中操作数组的常用方法</h4><p><img src="http://www.redwall.ee/images/blog/tarkvaratrendid2016/es6.jpg" alt="image"><br><a id="more"></a></p>
 <h1 id="数组中的forEach-、map-、filter-、reduce-、some-、every"><a href="#数组中的forEach-、map-、filter-、reduce-、some-、every" class="headerlink" title="数组中的forEach() 、map()、filter()、reduce()、some()、every()"></a>数组中的forEach() 、map()、filter()、reduce()、some()、every()</h1><h3 id="1、forEach"><a href="#1、forEach" class="headerlink" title="1、forEach()"></a>1、forEach()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.forEach((item,index,arr) =&gt; &#123;</span><br><span class="line">    console.log(item) //结果为1,2,3,4</span><br><span class="line">&#125;)</span><br><span class="line">// forEach遍历数组，无返回值，不改变原数组，</span><br><span class="line">// 仅仅只是遍历、常用于注册组件、指令等等。</span><br></pre></td></tr></table></figure>
 <h3 id="2、map"><a href="#2、map" class="headerlink" title="2、map()"></a>2、map()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.map((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item*10 //新数组为10,20,30,40</span><br><span class="line">&#125;)</span><br><span class="line">// map遍历数组，返回一个新数组，不改变原数组的值。</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">let newArr = arr.map(item =&gt; item*10)</span><br></pre></td></tr></table></figure>
 <h3 id="3、filter"><a href="#3、filter" class="headerlink" title="3、filter()"></a>3、filter()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line">arr.filter((item,index,arr) =&gt; &#123;</span><br><span class="line">    return item &gt; 2 //新数组为[3,4]</span><br><span class="line">&#125;)</span><br><span class="line">// filter过滤掉数组中不满足条件的值，返回一个新数组，</span><br><span class="line">// 不改变原数组的值。</span><br><span class="line"></span><br><span class="line">// 箭头函数写法</span><br><span class="line">let newArr = arr.filter(item =&gt; item &gt; 2)</span><br></pre></td></tr></table></figure>
