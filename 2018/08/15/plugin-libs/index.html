@@ -97,12 +97,12 @@
 <meta property="og:site_name" content="Remain focused">
 <meta property="og:description" content="经常使用的小插件，归类记录, 持续跟新">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534324827572&di=607874fe95b73dbe7266100d02dd9e97&imgtype=0&src=http%3A%2F%2Fwww.edu-hb.com%2FUpload%2FNewsImg%2F201601%2F29%2F160129230834jdegh.png">
-<meta property="og:updated_time" content="2018-08-27T07:50:34.734Z">
+<meta property="og:image" content="https://uploads.toptal.io/blog/image/125783/toptal-blog-image-1522333595770-14ba14a2f6099482fa9189f8764dd5ad.png">
+<meta property="og:updated_time" content="2019-09-28T13:29:54.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="plugin libs">
 <meta name="twitter:description" content="经常使用的小插件，归类记录, 持续跟新">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534324827572&di=607874fe95b73dbe7266100d02dd9e97&imgtype=0&src=http%3A%2F%2Fwww.edu-hb.com%2FUpload%2FNewsImg%2F201601%2F29%2F160129230834jdegh.png">
+<meta name="twitter:image" content="https://uploads.toptal.io/blog/image/125783/toptal-blog-image-1522333595770-14ba14a2f6099482fa9189f8764dd5ad.png">
 
 
 
@@ -344,7 +344,7 @@
       
 
       
-        <h3 id="经常使用的小插件，归类记录-持续跟新"><a href="#经常使用的小插件，归类记录-持续跟新" class="headerlink" title="经常使用的小插件，归类记录, 持续跟新"></a>经常使用的小插件，归类记录, 持续跟新</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1534324827572&amp;di=607874fe95b73dbe7266100d02dd9e97&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.edu-hb.com%2FUpload%2FNewsImg%2F201601%2F29%2F160129230834jdegh.png" alt=""><br><a id="more"></a></p>
+        <h3 id="经常使用的小插件，归类记录-持续跟新"><a href="#经常使用的小插件，归类记录-持续跟新" class="headerlink" title="经常使用的小插件，归类记录, 持续跟新"></a>经常使用的小插件，归类记录, 持续跟新</h3><p><img src="https://uploads.toptal.io/blog/image/125783/toptal-blog-image-1522333595770-14ba14a2f6099482fa9189f8764dd5ad.png" alt=""><br><a id="more"></a></p>
 <h1 id="1-为适配屏幕尺寸，将css下的px转为rem"><a href="#1-为适配屏幕尺寸，将css下的px转为rem" class="headerlink" title="1.为适配屏幕尺寸，将css下的px转为rem"></a>1.为适配屏幕尺寸，将css下的px转为rem</h1><h2 id="安装插件-postcss-px2rem"><a href="#安装插件-postcss-px2rem" class="headerlink" title="安装插件 postcss-px2rem"></a>安装插件 postcss-px2rem</h2><p><code>npm install postcss-px2rem --save-dev</code></p>
 <h2 id="配置rem-js"><a href="#配置rem-js" class="headerlink" title="配置rem.js"></a>配置rem.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// rem 适配</span><br><span class="line">const baseSize = 75</span><br><span class="line">function refreshRem () &#123;</span><br><span class="line">  // 当前页面宽度相对于 1920 宽的缩放比例，可根据自己需要修改。</span><br><span class="line">  let wid = document.documentElement.clientWidth || window.innerWidth</span><br><span class="line">  const scale = wid / 1920</span><br><span class="line">  // 设置页面根节点字体大小</span><br><span class="line">  document.documentElement.style.fontSize = (baseSize * Math.min(scale, 2)) + &apos;px&apos;</span><br><span class="line">&#125;</span><br><span class="line">refreshRem()</span><br><span class="line">window.addEventListener(&apos;resize&apos;, function () &#123;</span><br><span class="line">  setTimeout(refreshRem, 300)</span><br><span class="line">&#125;, false)</span><br><span class="line">window.addEventListener(&apos;pageshow&apos;, function (e) &#123;</span><br><span class="line">  if (e.persisted) &#123;</span><br><span class="line">    setTimeout(refreshRem, 300)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, false)</span><br></pre></td></tr></table></figure>
 <h2 id="main-js-引入"><a href="#main-js-引入" class="headerlink" title="main.js 引入"></a>main.js 引入</h2><p><code>import &#39;./libs/rem&#39;</code></p>
@@ -473,7 +473,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -486,7 +486,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -599,7 +599,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">28.3k</span> 字
+      博客全站共： <span class="post-count">29.7k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
