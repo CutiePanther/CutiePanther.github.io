@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="javascript,vuejs," />
+  <meta name="keywords" content="nodejs puppeteer," />
 
 
 
@@ -89,18 +89,20 @@
 
 
 
-<meta name="description" content="项目组件越做越多，还在为组件间传值烦恼吗? 用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。">
-<meta name="keywords" content="javascript,vuejs">
+<meta name="description" content="Puppeteer 翻译为“操纵木偶的人”，表达的意思就是通过puppeteer来操控浏览器，实现访问页面，进行截图，下载文件，自动进行键盘输入，提交表单，模拟点击等用户行为">
+<meta name="keywords" content="nodejs puppeteer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vuex">
-<meta property="og:url" content="http://yoursite.com/2018/05/12/vuex/index.html">
+<meta property="og:title" content="puppeteer">
+<meta property="og:url" content="http://yoursite.com/2019/11/10/puppeteer/index.html">
 <meta property="og:site_name" content="Remain focused">
-<meta property="og:description" content="项目组件越做越多，还在为组件间传值烦恼吗? 用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。">
+<meta property="og:description" content="Puppeteer 翻译为“操纵木偶的人”，表达的意思就是通过puppeteer来操控浏览器，实现访问页面，进行截图，下载文件，自动进行键盘输入，提交表单，模拟点击等用户行为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T16:10:33.846Z">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=257684131,1222505236&fm=26&gp=0.jpg">
+<meta property="og:updated_time" content="2019-11-12T15:34:42.053Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vuex">
-<meta name="twitter:description" content="项目组件越做越多，还在为组件间传值烦恼吗? 用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。">
+<meta name="twitter:title" content="puppeteer">
+<meta name="twitter:description" content="Puppeteer 翻译为“操纵木偶的人”，表达的意思就是通过puppeteer来操控浏览器，实现访问页面，进行截图，下载文件，自动进行键盘输入，提交表单，模拟点击等用户行为">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=257684131,1222505236&fm=26&gp=0.jpg">
 
 
 
@@ -130,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/12/vuex/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/10/puppeteer/"/>
 
 
 
 
 
-  <title>vuex | Remain focused</title>
+  <title>puppeteer | Remain focused</title>
   
 
 
@@ -275,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/vuex/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/10/puppeteer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Grapelet">
@@ -292,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vuex</h1>
+          <h1 class="post-title" itemprop="name headline">puppeteer</h1>
         
 
         <div class="post-meta">
@@ -304,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T23:55:05+08:00">
-                2018-05-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T19:15:31+08:00">
+                2019-11-10
               </time>
             
 
@@ -342,37 +344,13 @@
       
 
       
-        <h6 id="项目组件越做越多，还在为组件间传值烦恼吗-用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。"><a href="#项目组件越做越多，还在为组件间传值烦恼吗-用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。" class="headerlink" title="项目组件越做越多，还在为组件间传值烦恼吗? 用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。"></a>项目组件越做越多，还在为组件间传值烦恼吗? 用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。</h6><a id="more"></a>
-<h4 id="State"><a href="#State" class="headerlink" title="State"></a>State</h4><blockquote>
-<p>Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。</p>
-</blockquote>
-<blockquote>
-<p>由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态</p>
-</blockquote>
-<p>通过在根实例中注册 store 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 this.$store 访问到。让我们更新下 Counter 的实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const Counter = &#123;</span><br><span class="line">  template: `&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    count () &#123;</span><br><span class="line">      return this.$store.state.count</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Getter"><a href="#Getter" class="headerlink" title="Getter"></a>Getter</h4><p>有时候我们需要从 store 中的 state 中派生出一些状态，例如对列表进行过滤并计数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; id: 1, text: &apos;...&apos;, done: true &#125;,</span><br><span class="line">      &#123; id: 2, text: &apos;...&apos;, done: false &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doneTodos: state =&gt; &#123;</span><br><span class="line">      return state.todos.filter(todo =&gt; todo.done)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>我们可以很容易地在任何组件中使用它：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.getters.doneTodosCount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h4><p>更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment (state) &#123;</span><br><span class="line">      // 变更状态</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>你不能直接调用一个 mutation handler。这个选项更像是事件注册：“当触发一个类型为 increment 的 mutation 时，调用此函数。”要唤醒一个 mutation handler，你需要以相应的 type 调用 store.commit 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.commit(&apos;increment&apos;)</span><br></pre></td></tr></table></figure>
-<h5 id="对象风格的提交方式"><a href="#对象风格的提交方式" class="headerlink" title="对象风格的提交方式"></a>对象风格的提交方式</h5><p>提交 mutation 的另一种方式是直接使用包含 type 属性的对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">store.commit(&#123;</span><br><span class="line">  type: &apos;increment&apos;,</span><br><span class="line">  amount: 10</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>当使用对象风格的提交方式，整个对象都作为载荷传给 mutation 函数，因此 handler 保持不变：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  increment (state, payload) &#123;</span><br><span class="line">    state.count += payload.amount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>Action 类似于 mutation，不同在于：</p>
-<ol>
-<li>Action 提交的是 mutation，而不是直接变更状态。</li>
-<li>Action 可以包含任意异步操作。</li>
-</ol>
-<p>让我们来注册一个简单的 action：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment (state) &#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      context.commit(&apos;increment&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h5 id="分发-Action"><a href="#分发-Action" class="headerlink" title="分发 Action"></a>分发 Action</h5><p>Action 通过 store.dispatch 方法触发：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.dispatch(&apos;increment&apos;)</span><br></pre></td></tr></table></figure>
-<p>参考api ：<a href="https://vuex.vuejs.org/zh-cn/api.html" target="_blank" rel="noopener">https://vuex.vuejs.org/zh-cn/api.html</a></p>
+        <p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=257684131,1222505236&amp;fm=26&amp;gp=0.jpg" alt="image"><br>Puppeteer 翻译为“操纵木偶的人”，表达的意思就是通过puppeteer来操控浏览器，实现访问页面，进行截图，下载文件，自动进行键盘输入，提交表单，模拟点击等用户行为</p>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Puppeteer 是谷歌开发的Node库，它提供了一个高级 API 来通过 DevTools 协议控制 Chromium 或 Chrome<br>Puppeteer 默认以 headless 模式运行，但是可以通过修改配置文件运行“有头”模式。Chrome DevTools的接口很复杂，但puppeteer对其进行了封装</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>参照官网文档下载依赖<br><code>npm i puppeteer</code>可能会报错 <code>nodejs.Error: Chromium is not download</code><br>这是因为网络问题不能下载Chromium，设置淘宝镜像可以解决<br><code>SET PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org</code></p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="下载bing背景图片"><a href="#下载bing背景图片" class="headerlink" title="下载bing背景图片"></a>下载bing背景图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const puppeteer = require(&apos;puppeteer&apos;);</span><br><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">(async () =&gt; &#123;</span><br><span class="line">  // 默认无头模式</span><br><span class="line">  const browser = await puppeteer.launch()</span><br><span class="line">  const page = await browser.newPage()</span><br><span class="line">  // 可设置浏览器窗口大小</span><br><span class="line">  await page.setViewport(&#123;width: 1920, height: 1080&#125;)</span><br><span class="line">  await page.goto(&apos;https://cn.bing.com&apos;)</span><br><span class="line"></span><br><span class="line">  // 分析页面，获取背景图片地址</span><br><span class="line">  const imageHref = await page.evaluate((sel)=&gt;&#123;</span><br><span class="line">    return document.querySelector(sel).getAttribute(&apos;data-ultra-definition-src&apos;)</span><br><span class="line">  &#125;, &apos;#bgImgProgLoad&apos;)</span><br><span class="line"></span><br><span class="line">  // 打开要下载的图片地址</span><br><span class="line">  const viewSource = await page.goto(`https://cn.bing.com$&#123;imageHref&#125;`)</span><br><span class="line">  // 获取文件流</span><br><span class="line">  const buffer = await viewSource.buffer()</span><br><span class="line">  const date = new Date()</span><br><span class="line">  // 保存到本地</span><br><span class="line">  await fs.writeFile(path.join(__dirname, `$&#123;date.getTime()&#125;.png`), buffer, err =&gt; &#123;</span><br><span class="line">    if (err) throw err</span><br><span class="line">  &#125;)</span><br><span class="line">  console.log(&apos;The image is saved!&apos;)</span><br><span class="line">  // 关闭浏览器</span><br><span class="line">  await browser.close()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="页面表单"><a href="#页面表单" class="headerlink" title="页面表单"></a>页面表单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">const puppeteer = require(&apos;puppeteer&apos;);</span><br><span class="line">(async () =&gt; &#123;</span><br><span class="line">  const browser = await puppeteer.launch(&#123;</span><br><span class="line">    headless: false, // 无头模式</span><br><span class="line">    devtool: false, // 调试工具</span><br><span class="line">    timeout: 20000 // 超时时间</span><br><span class="line">  &#125;)</span><br><span class="line">  const option = &#123;</span><br><span class="line">    username: &apos;mio&apos;,</span><br><span class="line">    password: &apos;inevertellumypwd&apos;</span><br><span class="line">  &#125;</span><br><span class="line">  const page = await browser.newPage()</span><br><span class="line">  await page.setViewport(&#123;width: 1920, height: 1080&#125;)</span><br><span class="line">  // 跳转到本地页面</span><br><span class="line">  await page.goto(&apos;https://localhost:8080&apos;)</span><br><span class="line">  // 输入用户名密码</span><br><span class="line">  await page.type(&apos;.wrapper .username&apos;, option.username)</span><br><span class="line">  await page.type(&apos;.wrapper .password&apos;, option.password)</span><br><span class="line">  // 点击登录</span><br><span class="line">  await page.click(&apos;.signin-btn&apos;)</span><br><span class="line">  // 等待页面跳转，如果click触发页面跳转，会有一个独立的page.waitForNavigation()对象需要等待</span><br><span class="line">  await page.waitForNavigation()</span><br><span class="line">  // 若跳转后还处在原页面说明登录出错</span><br><span class="line">  const pUrl = await page.url()</span><br><span class="line">  if (pUrl === &apos;https://localhost:8080&apos;) &#123;</span><br><span class="line">    // 输出报错信息</span><br><span class="line">    await page.waitForSelector(&apos;.form-content &gt; .error-text &gt; .text&apos;)</span><br><span class="line">    const errorText = await page.$eval(&apos;.form-content &gt; .error-text &gt; .text&apos;, el=&gt;el.textContent.trim())</span><br><span class="line">    throw new Error(`登录失败,$&#123;errorText&#125;`)</span><br><span class="line">  &#125;</span><br><span class="line">  await browser.close()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h2><p><a href="https://pptr.dev/" target="_blank" rel="noopener">在线文档</a><br><a href="https://github.com/checkly/puppeteer-examples" target="_blank" rel="noopener">更多实例</a><br><a href="https://github.com/checkly/puppeteer-recorder" target="_blank" rel="noopener">自动生成puppeteer代码</a><br><a href="https://github.com/smooth-code/jest-puppeteer" target="_blank" rel="noopener">自动化测试</a></p>
 
       
     </div>
@@ -390,9 +368,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
-          
-            <a href="/tags/vuejs/" rel="tag"><i class="fa fa-tag"></i> vuejs</a>
+            <a href="/tags/nodejs-puppeteer/" rel="tag"><i class="fa fa-tag"></i> nodejs puppeteer</a>
           
         </div>
       
@@ -405,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/12/Android控件实现透明度/" rel="next" title="Android控件实现透明度">
-                <i class="fa fa-chevron-left"></i> Android控件实现透明度
+              <a href="/2019/11/03/mock/" rel="next" title="mockjs">
+                <i class="fa fa-chevron-left"></i> mockjs
               </a>
             
           </div>
@@ -414,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/12/快速起步vue-cli/" rel="prev" title="快速起步vue-cli">
-                快速起步vue-cli <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#项目组件越做越多，还在为组件间传值烦恼吗-用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。"><span class="nav-number">1.</span> <span class="nav-text">项目组件越做越多，还在为组件间传值烦恼吗? 用户信息好多页面都需要绑定数据，怎么操作？用vuex实现组件间的状态管理吧。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#State"><span class="nav-number"></span> <span class="nav-text">State</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Getter"><span class="nav-number"></span> <span class="nav-text">Getter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mutation"><span class="nav-number"></span> <span class="nav-text">Mutation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象风格的提交方式"><span class="nav-number"></span> <span class="nav-text">对象风格的提交方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action"><span class="nav-number"></span> <span class="nav-text">Action</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分发-Action"><span class="nav-number"></span> <span class="nav-text">分发 Action</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">2.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">3.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载bing背景图片"><span class="nav-number">3.1.</span> <span class="nav-text">下载bing背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面表单"><span class="nav-number">3.2.</span> <span class="nav-text">页面表单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文档"><span class="nav-number">4.</span> <span class="nav-text">相关文档</span></a></li></ol></div>
             
 
           </div>
